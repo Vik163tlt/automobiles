@@ -1,6 +1,6 @@
 public class Truck extends Car implements Competing{
-    public Truck(String brand, String model, double enginVolume_L) {
-        super(brand, model, enginVolume_L);
+    public Truck(String brand, String model, double engineVolumeL) {
+        super(brand, model, engineVolumeL);
     }
     public void start(){
         System.out.println("Начать движение.");
