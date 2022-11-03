@@ -8,7 +8,7 @@ public class Main {
 
         Truck man = new Truck("Man", "tgl 8.180", 3.5);
         Truck gaz = new Truck("ГАЗ", "САЗ-3507", 3.0);
-        Truck kamaz = new Truck("КамАЗ", "203", 3.3);
+        Truck kamaz = new Truck("КамАЗ", "   ", 3.3);
         Truck ural = new Truck("Урал", "375", 3.2);
 
         Bus ikarus = new Bus("Ikarus", "280", 2.4);
@@ -32,9 +32,9 @@ public class Main {
         liaz.bestLapTime();
         liaz.maxSpeed();
 
-        Category_B ivanov = new Category_B("Иванов Иван Иванович");
-        Category_C smirnov = new Category_C("Смирнов Алексей Алексеевич");
-        Category_D sidorov = new Category_D("Сидоров Петр Алексееви");
+        DriverCategoryB ivanov = new DriverCategoryB("Иванов Иван Иванович");
+        DriverCategoryC smirnov = new DriverCategoryC("Смирнов Алексей Алексеевич");
+        DriverCategoryD sidorov = new DriverCategoryD("Сидоров Петр Алексеевич");
 
         ivanov.driveCar(kia);
         smirnov.driveCar(ural);

@@ -18,7 +18,7 @@ public abstract class Driver <T extends Car> {
     }
 
     public Driver setName(String name) {
-        this.name = validOrDefult.validOrDefult(name, "default");
+        this.name = validOrDefault.validOrDefault(name, "default");
         return this;
     }
 

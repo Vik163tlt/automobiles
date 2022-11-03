@@ -1,12 +1,12 @@
 public abstract class Car {
     private String brand;
     private String model;
-    private double enginVolume_L;
+    private double enginVolumeL;
 
-    public Car(String brand, String model, double enginVolume_L) {
-        this.brand = validOrDefult.validOrDefult(brand,"defult");
-        this.model = validOrDefult.validOrDefult(model,"defult");
-        this.setEnginVolume_L(enginVolume_L);
+    public Car(String brand, String model, double enginVolumeL) {
+        this.brand = validOrDefault.validOrDefault(brand,"default");
+        this.model = validOrDefault.validOrDefault(model,"default");
+        this.setEnginVolumeL(enginVolumeL);
     }
 
     public String getBrand() {
@@ -17,12 +17,12 @@ public abstract class Car {
         return model;
     }
 
-    public double getEnginVolume_L() {
-        return enginVolume_L;
+    public double getEnginVolumeL() {
+        return enginVolumeL;
     }
 
-    public Car setEnginVolume_L(double enginVolume_L) {
-        this.enginVolume_L = enginVolume_L > 0.0f ? enginVolume_L : 1.5f;
+    public Car setEnginVolumeL(double enginVolumeL) {
+        this.enginVolumeL = enginVolumeL > 0.0f ? enginVolumeL : 1.5f;
         return this;
     }
     public abstract void start();
@@ -30,6 +30,6 @@ public abstract class Car {
 
     @Override
     public String toString() {
-        return brand + " " + model + ", объем двигателя: " + enginVolume_L;
+        return brand + " " + model + ", объем двигателя: " + enginVolumeL;
     }
 }

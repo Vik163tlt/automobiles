@@ -1,10 +1,10 @@
-public class Category_B extends Driver<Passenger>{
-    public Category_B(String name) {
+public class DriverCategoryD extends Driver<Bus>{
+    public DriverCategoryD(String name) {
         super(name);
     }
 
     @Override
-    public void driveCar(Passenger car) {
+    public void driveCar(Bus car) {
         System.out.println("Водитель " + getName() + " водит машину " + car.getBrand() + " " + car.getModel() + " и будет участвовать в заезде");
     }
 
