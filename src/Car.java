@@ -4,8 +4,8 @@ public abstract class Car {
     private double engineVolumeL;
 
     public Car(String brand, String model, double engineVolumeL) {
-        this.brand = validOrDefault.validOrDefault(brand,"default");
-        this.model = validOrDefault.validOrDefault(model,"default");
+        this.brand = validOrDefault.validOrDefault(brand, "default");
+        this.model = validOrDefault.validOrDefault(model, "default");
         this.setEngineVolumeL(engineVolumeL);
     }
 
@@ -25,7 +25,9 @@ public abstract class Car {
         this.engineVolumeL = engineVolumeL > 0.0f ? engineVolumeL : 1.5f;
         return this;
     }
+
     public abstract void start();
+
     public abstract void end();
 
     @Override
@@ -33,3 +35,4 @@ public abstract class Car {
         return brand + " " + model + ", объем двигателя: " + engineVolumeL;
     }
 }
+

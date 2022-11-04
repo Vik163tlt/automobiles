@@ -1,36 +1,20 @@
 public class Main {
     public static void main(String[] args) {
 
-        Passenger lada = new Passenger("Lada", "Granta", 1.7);
-        Passenger audi = new Passenger("Audi","A8 50 L TDI quattro", 3.0);
-        Passenger hyundai = new Passenger("Hyundai", "Avante", 1.6);
-        Passenger kia = new Passenger("Kia", "Sportage 4-го поколения", 2.4);
+        Passenger lada = new Passenger("Lada", "Granta", 1.7, Passenger.BodyType.SEDAN);
+        Passenger audi = new Passenger("Audi","A8 50 L TDI quattro",1.8,Passenger.BodyType.HATCHBACK);
+        Passenger hyundai = new Passenger("Hyundai", "Avante", 1.6, Passenger.BodyType.SEDAN);
+        Passenger kia = new Passenger("Kia", "Sportage 4-го поколения", 2.4, Passenger.BodyType.CROSSOVER);
 
-        Truck man = new Truck("Man", "tgl 8.180", 3.5);
-        Truck gaz = new Truck("ГАЗ", "САЗ-3507", 3.0);
-        Truck kamaz = new Truck("КамАЗ", "   ", 3.3);
-        Truck ural = new Truck("Урал", "375", 3.2);
+        Truck man = new Truck("Man", "tgl 8.180", 3.5, Truck.LiftingCapacity.N3);
+        Truck gaz = new Truck("ГАЗ", "САЗ-3507", 3.0, Truck.LiftingCapacity.N1);
+        Truck kamaz = new Truck("КамАЗ", "   ", 3.3, Truck.LiftingCapacity.N2);
+        Truck ural = new Truck("Урал", "375", 3.2, null);
 
-        Bus ikarus = new Bus("Ikarus", "280", 2.4);
-        Bus liaz = new Bus("ЛиАЗ", "507", 2.9);
-        Bus volkswagen = new Bus("Volkswagen", "Microbus", 2.7);
-        Bus krupp = new Bus("Krupp", "Titan", 1.8);
-
-        System.out.println(lada);
-        System.out.println(kamaz);
-        audi.start();
-
-        audi.pitStop();
-        audi.bestLapTime();
-        audi.maxSpeed();
-
-        kamaz.pitStop();
-        kamaz.bestLapTime();
-        kamaz.maxSpeed();
-
-        liaz.pitStop();
-        liaz.bestLapTime();
-        liaz.maxSpeed();
+        Bus ikarus = new Bus("Ikarus", "280", 2.4, Bus.Capacity.EXTRA_LARGE);
+        Bus liaz = new Bus("ЛиАЗ", "507", 2.9, Bus.Capacity.MEDIUM);
+        Bus volkswagen = new Bus("Volkswagen", "Microbus", 2.7, Bus.Capacity.SMALL);
+        Bus krupp = new Bus("Krupp", "Titan", 1.8,null);
 
         DriverCategoryB ivanov = new DriverCategoryB("Иванов Иван Иванович");
         DriverCategoryC smirnov = new DriverCategoryC("Смирнов Алексей Алексеевич");
@@ -39,6 +23,10 @@ public class Main {
         ivanov.driveCar(kia);
         smirnov.driveCar(ural);
         sidorov.driveCar(krupp);
+
+        hyundai.printBodyType();
+        gaz.printLiftingCapacity();
+        volkswagen.printCapacity();
 
 
     }
