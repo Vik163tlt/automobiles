@@ -1,5 +1,5 @@
 public class DriverCategoryB extends Driver<Passenger>{
-    public DriverCategoryB(String name) {
+    public DriverCategoryB(String name,boolean haveDriverIsLicense, int drivingExperience) {
         super(name);
     }
 

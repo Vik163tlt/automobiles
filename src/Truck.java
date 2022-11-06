@@ -53,4 +53,7 @@ public class Truck extends Car implements Competing{
             System.out.println("Грузоподъемность " + getBrand()+" "+getModel()+" составляет от "+ liftingCapacity.getMinLiftingCapacity()+" до "+liftingCapacity.getMaxLiftingCapacity()+" тонн");
         }
     }
+    public boolean passDiagnostic() {
+        return Math.random() >0.4;
+    }
 }

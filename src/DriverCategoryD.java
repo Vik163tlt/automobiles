@@ -1,6 +1,6 @@
 public class DriverCategoryD extends Driver<Bus>{
-    public DriverCategoryD(String name) {
-        super(name);
+    public DriverCategoryD(String name,boolean haveDriverIsLicense, int drivingExperience) {
+        super(name,haveDriverIsLicense,drivingExperience);
     }
 
     @Override

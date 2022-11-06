@@ -36,7 +36,7 @@ public abstract class Driver <T extends Car> {
     }
 
     public Driver setDrivingExperience(int drivingExperience) {
-        this.drivingExperience = Math.max(drivingExperience, 1);
+        this.drivingExperience = Math.max(drivingExperience,1);
         return this;
     }
     public abstract void driveCar(T car);

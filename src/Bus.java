@@ -51,4 +51,8 @@ public class Bus extends Car implements Competing{
             System.out.println("Вместимость автобуса " + getBrand() + " " + getModel() + " составляет от " + capacity.getMinCapacity() + " до " + capacity.getMaxCapacity() + " человек");
         }
     }
+    public boolean passDiagnostic() {
+        System.out.println("Автобусу "+getBrand()+" "+getModel()+ " диагностика не требуется");
+        return true;
+    }
 }

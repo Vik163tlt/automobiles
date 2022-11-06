@@ -50,4 +50,7 @@ public class Passenger extends Car implements Competing {
             System.out.println("Данных недостаточно");
         }
     }
+    public boolean passDiagnostic() {
+        return Math.random() > 0.5;
+    }
 }

@@ -16,9 +16,9 @@ public class Main {
         Bus volkswagen = new Bus("Volkswagen", "Microbus", 2.7, Bus.Capacity.SMALL);
         Bus krupp = new Bus("Krupp", "Titan", 1.8,null);
 
-        DriverCategoryB ivanov = new DriverCategoryB("Иванов Иван Иванович");
-        DriverCategoryC smirnov = new DriverCategoryC("Смирнов Алексей Алексеевич");
-        DriverCategoryD sidorov = new DriverCategoryD("Сидоров Петр Алексеевич");
+        DriverCategoryB ivanov = new DriverCategoryB("Иванов Иван Иванович",true,10);
+        DriverCategoryC smirnov = new DriverCategoryC("Смирнов Алексей Алексеевич",false,11);
+        DriverCategoryD sidorov = new DriverCategoryD("Сидоров Петр Алексеевич",true,12);
 
         ivanov.driveCar(kia);
         smirnov.driveCar(ural);
@@ -28,6 +28,25 @@ public class Main {
         gaz.printLiftingCapacity();
         volkswagen.printCapacity();
 
+        passDiagnostic(
+                lada,audi,hyundai,kia,man,gaz,kamaz,ural,ikarus,liaz,volkswagen,krupp
+        );
 
+    }
+    public static void passDiagnostic(Car... cars){
+        for (Car car : cars){
+            passDiagnosticCar(car);
+        }
+    }
+    private static void passDiagnosticCar(Car car){
+        if (!car.passDiagnostic()){
+            try {
+                throw new RuntimeException("Автомобиль " + car.getBrand() + " " + car.getModel() + " не прошел диагностику");
+            } catch(RuntimeException e) {
+                System.out.println(e.getMessage());
+            }
+        } else {
+            System.out.println("Автомобиль " + car.getBrand() + " " + car.getModel() + " успешно прошел диагностику");
+        }
     }
 }
