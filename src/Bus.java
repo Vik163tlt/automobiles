@@ -55,4 +55,9 @@ public class Bus extends Car implements Competing{
         System.out.println("Автобусу "+getBrand()+" "+getModel()+ " диагностика не требуется");
         return true;
     }
+
+    @Override
+    public void repair() {
+        System.out.println("Автобус "+ getBrand() +" "+getModel()+ " прошел сервис починки");
+    }
 }

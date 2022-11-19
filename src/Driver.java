@@ -46,4 +46,10 @@ public abstract class Driver <T extends Car> {
     public abstract void end();
 
     public abstract void refillCar();
+
+    @Override
+    public String toString() {
+        return name+", стаж вождения: "+drivingExperience+" лет";
+    }
 }
+

@@ -56,4 +56,9 @@ public class Truck extends Car implements Competing{
     public boolean passDiagnostic() {
         return Math.random() >0.4;
     }
+
+    @Override
+    public void repair() {
+        System.out.println("Грузовик "+ getBrand() +" "+getModel()+ " прошел сервис починки");
+    }
 }

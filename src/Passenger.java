@@ -53,4 +53,10 @@ public class Passenger extends Car implements Competing {
     public boolean passDiagnostic() {
         return Math.random() > 0.5;
     }
+
+    @Override
+    public void repair() {
+        System.out.println("Автомобиль "+ getBrand() +" "+getModel()+ " прошел сервис починки");
+    }
+
 }
