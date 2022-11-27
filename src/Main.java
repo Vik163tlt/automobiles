@@ -1,4 +1,6 @@
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,7 +16,7 @@ public class Main {
         Passenger audi = new Passenger("Audi","A8 50 L TDI quattro",1.8,Passenger.BodyType.HATCHBACK);
         Passenger hyundai = new Passenger("Hyundai", "Avante", 1.6, Passenger.BodyType.SEDAN);
         Passenger kia = new Passenger("Kia", "Sportage 4-го поколения", 2.4, Passenger.BodyType.CROSSOVER);
-        kia.addDriver (new DriverCategoryC("Смирнов Алексей Алексеевич",false,11));
+//        kia.addDriver (new DriverCategoryC("Смирнов Алексей Алексеевич",false,11));
         kia.addMechanic(petrov);
         kia.addSponsor(lukoil,michelin);
 
@@ -22,7 +24,7 @@ public class Main {
         Truck gaz = new Truck("ГАЗ", "САЗ-3507", 3.0, Truck.LiftingCapacity.N1);
         Truck kamaz = new Truck("КамАЗ", "   ", 3.3, Truck.LiftingCapacity.N2);
         Truck ural = new Truck("Урал", "375", 3.2, null);
-        kamaz.addDriver (new DriverCategoryB("Иванов Иван Иванович",true,10));
+//        kamaz.addDriver (new DriverCategoryB("Иванов Иван Иванович",true,10));
         kamaz.addMechanic(alekseev);
         kamaz.addSponsor(michelin);
 
@@ -30,14 +32,14 @@ public class Main {
         Bus liaz = new Bus("ЛиАЗ", "507", 2.9, Bus.Capacity.MEDIUM);
         Bus volkswagen = new Bus("Volkswagen", "Microbus", 2.7, Bus.Capacity.SMALL);
         Bus krupp = new Bus("Krupp", "Titan", 1.8,null);
-        volkswagen.addDriver (new DriverCategoryD("Сидоров Петр Алексеевич",true,12));
+//        volkswagen.addDriver (new DriverCategoryD("Сидоров Петр Алексеевич",true,12));
         volkswagen.addMechanic(petrov);
         volkswagen.addSponsor(lukoil);
 
-//        DriverCategoryB ivanov = new DriverCategoryB("Иванов Иван Иванович",true,10);
-//        DriverCategoryC smirnov = new DriverCategoryC("Смирнов Алексей Алексеевич",false,11);
-//        DriverCategoryD sidorov = new DriverCategoryD("Сидоров Петр Алексеевич",true,12);
-//
+        DriverCategoryB ivanov = new DriverCategoryB("Иванов Иван Иванович",true,10);
+        DriverCategoryC smirnov = new DriverCategoryC("Смирнов Алексей Алексеевич",false,11);
+        DriverCategoryD sidorov = new DriverCategoryD("Сидоров Петр Алексеевич",true,12);
+
 //        ivanov.driveCar(kia);
 //        smirnov.driveCar(ural);
 //        sidorov.driveCar(krupp);
@@ -60,6 +62,29 @@ public class Main {
             serviceStation.service();
             serviceStation.service();
         }
+        Set<Car> allCars = new HashSet<>(cars);
+        Set<Sponsor> sponsors = new HashSet<>();
+        sponsors.add(lukoil);
+        sponsors.add(michelin);
+        sponsors.add(lukoil);
+
+
+        Set<Mechanic> mechanics = new HashSet<>();
+        mechanics.add(petrov);
+        mechanics.add(alekseev);
+        mechanics.add(kuznecov);
+        mechanics.add(kuznecov);
+
+
+        Set<Driver> drivers = new HashSet<>();
+        drivers.add(ivanov);
+        drivers.add(smirnov);
+        drivers.add(sidorov);
+
+        System.out.println(allCars);
+        System.out.println(sponsors);
+        System.out.println(mechanics);
+        System.out.println(drivers);
 
     }
 

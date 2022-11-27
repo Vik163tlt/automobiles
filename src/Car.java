@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class Car {
     private String brand;
@@ -67,5 +68,18 @@ public abstract class Car {
     }
 
     public abstract void repair();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Double.compare(car.engineVolumeL, engineVolumeL) == 0 && Objects.equals(brand, car.brand) && Objects.equals(model, car.model) && Objects.equals(drivers, car.drivers) && Objects.equals(mechanics, car.mechanics) && Objects.equals(sponsors, car.sponsors);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, engineVolumeL, drivers, mechanics, sponsors);
+    }
 }
 
